@@ -1,39 +1,24 @@
-import { useState } from 'react'
-import aiBackground from '../assets/Aiimage.jpg'
+import React from 'react';
+import Aibackground from "../assets/Aiimage.jpg";
 
 const CallToAction = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <section className="relative text-white py-16 md:py-24 overflow-hidden">
-      {/* Background image */}
-      <div 
-        className="absolute inset-0 bg-green-300 bg-gradient-to-r from-green-300/90 to-blue-900/90"
-        style={{
-          backgroundImage: `url(${aiBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'brightness(0.8)'
-        }}
-      ></div>
-      
-      {/* Content container */}
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="max-w-2xl mx-auto text-center"> {/* Centered container */}
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            Join The Yovolution
-          </h2>
-          <p className="text-xl md:text-2xl mb-8 text-blue-100">
+    <section
+      className="relative h-[50vh] w-full flex items-center justify-center bg-cover bg-no-repeat"
+      style={{ 
+        backgroundImage: `url(${Aibackground})`,
+        backgroundPosition: 'center 10%',
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-teal-900/70 to-transparent flex flex-col justify-center items-center text-white text-center p-5 h-full w-full">
+        <div className="w-full max-w-9xl px-4">
+          <h1 className="text-4xl font-bold mb-2 text-white md:text-5xl sm:text-3xl">
+            Join The Yovoluton
+          </h1>
+          <p className="text-xl font-light mb-6 md:text-2xl sm:text-lg">
             Ready to Teach Smarter?
           </p>
-          <button 
-            className={`bg-green-700 text-white rounded-md font-semibold px-6 py-3 text-lg transition-all duration-300 ${
-              isHovered ? 'bg-blue-50 transform -translate-y-1 shadow-lg' : 'shadow-md'
-            }`}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
+          <button className="bg-teal-800 text-white border-none px-7 py-3 rounded-md font-light text-lg cursor-pointer transition-colors duration-300 inline-block text-center mx-auto hover:bg-teal-100 hover:text-teal-900 md:px-7 md:py-4 sm:px-6 sm:py-3 xs:px-5 xs:py-2 xs:text-base">
             Start Now with Your AI Assistant →
           </button>
         </div>

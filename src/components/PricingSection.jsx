@@ -1,73 +1,22 @@
 import React, { useState } from "react";
-import { Check, X } from "lucide-react"
-import teachers from '../assets/techers.png'
+import { Check, X } from "lucide-react";
+import teachers from "../assets/techers.png";
 
 const PricingSection = () => {
-  const pricingTiers = [
-    {
-      name: "Basic Plan",
-      description: "Teachers exploring the platform or with minimal usage needs.",
-      price: "FREE",
-      period: "",
-      features: [
-        { name: "Resource Hub (Limited)", included: true },
-        { name: "Teaching Studio", included: true },
-        { name: "Content Lab", included: true },
-        { name: "Command desk", included: true },
-        { name: "Growth Hub", included: true },
-        { name: "Avatar Hub", included: true },
-        { name: "5 images/month, 5 min video", included: true },
-        { name: "10x/5 lesson plans & quizzes/month", included: true },
-        { name: "No content report", included: false },
-      ],
-    },
-    {
-      name: "Pro Plan",
-      description: "Subject teachers managing weekly content needs for their classes",
-      price: "$10/month",
-      period: "or $100/year",
-      features: [
-        { name: "Planning Studio", included: true },
-        { name: "Teaching Studio", included: true },
-        { name: "Content Lab", included: true },
-        { name: "Command desk", included: true },
-        { name: "Growth Hub", included: true },
-        { name: "Avatar Hub", included: true },
-        { name: "20 images/month, 5 min video", included: true },
-        { name: "Addon: $1 per 10 extra images, $2 per extra video minute", included: true },
-      ],
-    },
-    {
-      name: "Master Plan",
-      description: "Full-departmental teachers using AI extensively",
-      price: "$30/month",
-      period: "or $300/year",
-      features: [
-        { name: "Planning Studio", included: true },
-        { name: "Teaching Studio", included: true },
-        { name: "Content Lab", included: true },
-        { name: "Command desk", included: true },
-        { name: "Growth Hub", included: true },
-        { name: "Avatar Hub", included: true },
-        { name: "60 images/month, 15 min video", included: true },
-        { name: "Addon: $1 per 10 extra images, $2 per extra video minute", included: true },
-      ],
-    },
-  ];
-
   const [selectedRegion, setSelectedRegion] = useState("Global");
 
   return (
     <section className="py-16 relative overflow-hidden bg-gray-50">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-4 md:px-8 flex flex-col items-center">
+        {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-yolearn-dark mb-4">
-            Teach Better. Less Effort. More Impact.
+          <h2 className="text-4xl md:text-4xl font-bold text-black mb-4">
+            Teach Better. Less Effort.
+            <br /> More Impact.
           </h2>
-          <p className="text-gray-600 mb-8">
-            Join thousands of educators who enhance their teaching with AI-powered tools on YoLearn.
+          <p className="text-emerald-500 mb-8">
+            Join thousands of educators across who enhance their <br/>teaching with AI-powered tools on YoLearn.
           </p>
-
           <div className="flex justify-center mb-8">
             <img
               src={teachers}
@@ -75,20 +24,19 @@ const PricingSection = () => {
               className="w-full max-w-lg rounded-xl shadow-lg object-cover"
             />
           </div>
-
           <p className="text-gray-600">
             Educators across subjects and languages are streamlining planning, instruction, and assessment with YoLearn.
           </p>
         </div>
 
-        {/* Region switcher */}
+        {/* Region Switcher */}
         <div className="flex justify-center mb-12">
-          <div className="bg-white border border-gray-200 rounded-full p-1 inline-flex shadow-sm">
-            {["Global", "India"].map(region => (
+          <div className="bg-white border border-gray-200 rounded-full p-1 inline-flex shadow-sm w-full max-w-xs">
+            {["Global", "India"].map((region) => (
               <button
                 key={region}
                 onClick={() => setSelectedRegion(region)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                className={`px-10 py-2 rounded-full text-sm font-medium transition flex-1 ${
                   selectedRegion === region
                     ? "bg-teal-500 text-white shadow"
                     : "text-gray-600 hover:bg-gray-100"
@@ -100,43 +48,97 @@ const PricingSection = () => {
           </div>
         </div>
 
-        {/* Pricing tiers */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pricingTiers.map((tier, index) => (
-            <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-all">
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{tier.name}</h3>
-                <p className="text-gray-500 text-sm mb-4">{tier.description}</p>
-                <div className="mb-6">
-                  <p className="text-3xl font-bold text-teal-600">{tier.price}</p>
-                  <p className="text-gray-400">{tier.period}</p>
-                </div>
+        {/* Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-7xl justify-center">
+          {/* Basic Plan */}
+          <PlanCard
+            title="Basic Plan"
+            description="Teachers exploring the platform or with minimal usage needs."
+            price="FREE"
+            features={[
+              { text: "Resource Hub (Limited)", included: true },
+              { text: "Teaching Studio", included: true },
+              { text: "Content Lab", included: false },
+              { text: "Command desk", included: false },
+              { text: "Growth Hub", included: false },
+              { text: "Avatar Hub", included: false },
+              { text: "5 images/month, 5 min video", included: true },
+              { text: "10x/5 lesson plans & quizzes/month", included: false },
+              { text: "No content report", included: false },
+            ]}
+          />
 
-                <ul className="space-y-3 mb-6">
-                  {tier.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start text-sm">
-                      {feature.included ? (
-                        <Check className="h-5 w-5 mr-2 text-green-500" />
-                      ) : (
-                        <X className="h-5 w-5 mr-2 text-gray-300" />
-                      )}
-                      <span className={feature.included ? "text-gray-700" : "text-gray-400"}>
-                        {feature.name}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+          {/* Pro Plan */}
+          <PlanCard
+            title="Pro Plan"
+            description="Subject teachers managing weekly content needs for their classes"
+            price="$5/month or $50/year"
+            features={[
+              { text: "Planning Studio", included: true },
+              { text: "Teaching Studio", included: true },
+              { text: "Content Lab", included: false },
+              { text: "Command desk", included: false },
+              { text: "Growth Hub", included: false },
+              { text: "Avatar Hub", included: false },
+              { text: "20 images/month, 5 min video", included: true },
+              { text: "Addon: $1 per 10 extra images, $2 per extra video minute", included: true },
+            ]}
+          />
 
-                <button className="w-full py-2 bg-teal-500 text-white font-semibold rounded hover:bg-teal-600 transition">
-                  See Plan
-                </button>
-              </div>
-            </div>
-          ))}
+          {/* Master Plan */}
+          <PlanCard
+            title="Master Plan"
+            description="Full-departmental teachers using AI extensively"
+            price="$10/month or $100/year"
+            subtext="or $300/year"
+            features={[
+              { text: "Planning Studio", included: true },
+              { text: "Teaching Studio", included: true },
+              { text: "Content Lab", included: true },
+              { text: "Command desk", included: true },
+              { text: "Growth Hub", included: true },
+              { text: "Avatar Hub", included: true },
+              { text: "60 images/month, 15 min video", included: true },
+              { text: "Addon: $1 per 10 extra images, $2 per extra video minute", included: true },
+            ]}
+          />
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+const PlanCard = ({ title, description, price, subtext, features }) => (
+  <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:border-teal-300 hover:-translate-y-1 flex flex-col h-full">
+    <div className="p-6 flex flex-col flex-grow">
+      <div className="mb-4">
+        <h3 className="text-xl font-bold text-black mb-2">{title}</h3>
+        <p className="text-black text-sm">{description}</p>
+      </div>
+
+      <div className="my-5 py-4 border-t border-b border-gray-100">
+        <p className="text-2xl font-bold text-black">{price}</p>
+        {subtext && <p className="text-gray-400 text-sm">{subtext}</p>}
+      </div>
+
+      <ul className="space-y-3 mb-6 flex-grow">
+        {features.map(({ text, included }, index) => (
+          <li key={index} className="flex items-start">
+            {included ? (
+              <Check className="h-4 w-4 mr-3 mb-2 text-green-500 mt-0.5 flex-shrink-0" />
+            ) : (
+              <X className="h-4 w-4 mr-3 mb-2 text-red-500 mt-0.5 flex-shrink-0" />
+            )}
+            <span className={`text-sm ${included ? "text-gray-700" : "text-gray-400"}`}>{text}</span>
+          </li>
+        ))}
+      </ul>
+
+      <button className="w-full py-3 bg-teal-500 text-white font-medium rounded-full hover:bg-teal-600 transition text-sm mt-auto">
+        See Plan
+      </button>
+    </div>
+  </div>
+);
 
 export default PricingSection;
