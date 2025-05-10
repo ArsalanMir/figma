@@ -12,7 +12,7 @@ const TeacherSuccessStories = () => {
         background: `linear-gradient(rgba(0, 119, 182, 0.9), rgba(0, 119, 182, 0.9)), url(${Image})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        // backgroundAttachment removed for normal scrolling behavior
       }}
     >
       {/* Overlay */}
@@ -25,7 +25,7 @@ const TeacherSuccessStories = () => {
             Teacher Success Stories
           </h2>
           <p className="text-lg text-white opacity-90 max-w-2xl mx-auto">
-            Discover how educators around the world are transforming their classrooms with YoLearn.
+            Discover how educators around the world are transforming<br/> their classrooms with YoLearn.
           </p>
         </div>
 
@@ -35,7 +35,7 @@ const TeacherSuccessStories = () => {
           <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="flex items-center mb-4">
               <img 
-                src=""
+                src="" 
                 alt="Emily Zhang"
                 className="w-16 h-16 rounded-full object-cover border-4 border-emerald-100 mr-4"
               />
@@ -54,7 +54,7 @@ const TeacherSuccessStories = () => {
           <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="flex items-center mb-4">
               <img 
-                src=""
+                src="" 
                 alt="David Ncube"
                 className="w-16 h-16 rounded-full object-cover border-4 border-emerald-100 mr-4"
               />
@@ -89,42 +89,45 @@ const TeacherSuccessStories = () => {
           </div>
         </div>
 
-        {/* Achievements Section */}
-        <div className="text-center">
-          <h3 className="text-2xl font-bold text-white mb-8">What We've Achieved Together</h3>
-          
-          {/* First Row of Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30">
-              <p className="text-3xl font-bold text-emerald-500 mb-2">240,000+</p>
-              <p className="text-black text-opacity-90">Lessons Created</p>
-            </div>
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30">
-              <p className="text-3xl font-bold text-emerald-500 mb-2">1,200,000+</p>
-              <p className="text-black text-opacity-90">Teacher Hours Saved</p>
-            </div>
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30">
-              <p className="text-3xl font-bold text-emerald-500 mb-2">3,500+</p>
-              <p className="text-black text-opacity-90">Schools Onboarded</p>
-            </div>
-          </div>
+    {/* Achievements Section */}
+<div className="text-center">
+  <h3 className="text-4xl font-bold text-white mb-8">What We've Achieved Together</h3>
 
-          {/* Second Row of Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30">
-              <p className="text-3xl font-bold text-emerald-500 mb-2">52,000+</p>
-              <p className="text-black text-opacity-90">AI Companions Deployed</p>
-            </div>
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30">
-              <p className="text-3xl font-bold text-emerald-500 mb-2">95%</p>
-              <p className="text-black text-opacity-90">Academic Improvement</p>
-            </div>
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30">
-              <p className="text-3xl font-bold text-emerald-500 mb-2">93%</p>
-              <p className="text-black text-opacity-90">Increased Engagement</p>
-            </div>
-          </div>
-        </div>
+  {/* First Row of Stats */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto mt-6 justify-items-center">
+    <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30 min-h-[150px] w-[230px] flex flex-col justify-center items-center">
+      <p className="text-3xl font-bold text-emerald-500 mb-2">240,000+</p>
+      <p className="text-black text-opacity-90">Lessons Created</p>
+    </div>
+    <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30 min-h-[150px] w-[230px] flex flex-col justify-center items-center">
+      <p className="text-3xl font-bold text-emerald-500 mb-2">1,200,000+</p>
+      <p className="text-black text-opacity-90">Teacher Hours Saved</p>
+    </div>
+    <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30 min-h-[150px] w-[230px] flex flex-col justify-center items-center">
+      <p className="text-3xl font-bold text-emerald-500 mb-2">3,500+</p>
+      <p className="text-black text-opacity-90">Schools Onboarded</p>
+    </div>
+  </div>
+
+  {/* Second Row of Stats */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto mt-6 justify-items-center">
+    <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30 min-h-[150px] w-[230px] flex flex-col justify-center items-center">
+      <p className="text-3xl font-bold text-emerald-500 mb-2">52,000+</p>
+      <p className="text-black text-opacity-90">AI Companions Deployed</p>
+    </div>
+    <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30 min-h-[150px] w-[230px] flex flex-col justify-center items-center">
+      <p className="text-3xl font-bold text-emerald-500 mb-2">95%</p>
+      <p className="text-black text-opacity-90">Academic Improvement</p>
+    </div>
+    <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-30 min-h-[150px] w-[230px] flex flex-col justify-center items-center">
+      <p className="text-3xl font-bold text-emerald-500 mb-2">93%</p>
+      <p className="text-black text-opacity-90">Increased Engagement</p>
+    </div>
+  </div>
+</div>
+
+
+
       </div>
     </section>
   );
