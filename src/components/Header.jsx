@@ -19,7 +19,7 @@ const Header = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
-          <a href="#" className="text-yolearn-blue font-medium hover:underline">Login</a>
+          <a href="#" className="text-green-400 font-medium hover:underline">Login</a>
           <a 
             href="#" 
             className="bg-emerald-500 hover:bg-emerald-600 text-white rounded-md font-medium px-4 py-2"
@@ -30,11 +30,26 @@ const Header = () => {
 
         {/* for Mobiles */}
         <button 
-          onClick={() => setIsMenuOpen(!isMenuOpen)} 
-          className="md:hidden flex items-center"
-        >
-          <img src="" alt="Menu" className="w-6 h-6" />
-        </button>
+  onClick={() => setIsMenuOpen(!isMenuOpen)} 
+  className="md:hidden flex items-center"
+  aria-label="Toggle Menu"
+>
+  <svg 
+    className="w-6 h-6 text-gray-800" 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth={2} 
+      d="M4 6h16M4 12h16M4 18h16" 
+    />
+  </svg>
+</button>
+
       </div>
 
       {isMenuOpen && (
