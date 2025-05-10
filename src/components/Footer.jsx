@@ -84,37 +84,37 @@ const Footer = () => {
         {/* bottom section */}
         <div className="flex flex-col lg:flex-row lg:justify-between gap-7 mb-8">
           <div>
-            <h3 className="text-base mb-2">Sitemap</h3>
-            <p className="text-sm font-light">Tools</p>
-            <p className="text-sm font-light">Studios</p>
-            <p className="text-sm font-light">Assistants</p>
+            <h3 className="text-base mb-4">Sitemap</h3>
+            <p className="text-sm font-light mb-2">Tools</p>
+            <p className="text-sm font-light mb-2">Studios</p>
+            <p className="text-sm font-light mb-2">Assistants</p>
           </div>
           <div>
-            <h3 className="text-base mb-2">Company</h3>
-            <p className="text-sm font-light">About</p>
-            <p className="text-sm font-light">Career</p>
-            <p className="text-sm font-light">Contact</p>
+            <h3 className="text-base mb-4">Company</h3>
+            <p className="text-sm font-light mb-2">About</p>
+            <p className="text-sm font-light mb-2">Career</p>
+            <p className="text-sm font-light mb-2">Contact</p>
           </div>
           <div>
-            <h3 className="text-base mb-2">Legal</h3>
-            <p className="text-sm font-light">Terms & conditions</p>
-            <p className="text-sm font-light">Privacy Policy</p>
-            <p className="text-sm font-light">Data Policy</p>
+            <h3 className="text-base mb-4">Legal</h3>
+            <p className="text-sm font-light mb-2">Terms & conditions</p>
+            <p className="text-sm font-light mb-2">Privacy Policy</p>
+            <p className="text-sm font-light mb-2">Data Policy</p>
           </div>
           <div>
-            <h3 className="text-base mb-2">Socials</h3>
-            <p className="text-sm font-light">X (Twitter)</p>
-            <p className="text-sm font-light">LinkedIn</p>
-            <p className="text-sm font-light">YouTube</p>
-            <p className="text-sm font-light">WhatsApp Channel</p>
+            <h3 className="text-base mb-4">Socials</h3>
+            <p className="text-sm font-light mb-2">X (Twitter)</p>
+            <p className="text-sm font-light mb-2">LinkedIn</p>
+            <p className="text-sm font-light mb-2">YouTube</p>
+            <p className="text-sm font-light mb-2">WhatsApp Channel</p>
           </div>
-          <div className="mt-4 lg:mt-0">
-            <p className="text-sm font-light">For Students</p>
-            <p className="text-sm font-light">For Teachers</p>
-            <p className="text-sm font-light">For Schools</p>
-            <p className="text-sm font-light">For Organizations</p>
-            <p className="text-sm font-light">Resources</p>
-            <p className="text-sm font-light">Pricing</p>
+          <div >
+            <p className="text-sm font-light mb-4">For Students</p>
+            <p className="text-sm font-light mb-2">For Teachers</p>
+            <p className="text-sm font-light mb-2">For Schools</p>
+            <p className="text-sm font-light mb-2">For Organizations</p>
+            <p className="text-sm font-light mb-2">Resources</p>
+            <p className="text-sm font-light mb-2">Pricing</p>
           </div>
         </div>
 
