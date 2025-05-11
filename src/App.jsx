@@ -7,7 +7,7 @@ import Hero from './components/Hero'
 import Footer from './components/Footer'
 import FAQ from './components/FAQ'
 import CallToAction from './components/CallToAction'
-import WhyTeachers from './components/WhyTeachers'
+
 import TeacherSuccessStories from './components/TeacherSuccessStories'
 
 function App() {
@@ -16,7 +16,6 @@ function App() {
       <Header/>
     <main className="bg-green-100 min-h-screen">
        <Hero />
-        <WhyTeachers />
         <TeacherSuccessStories/>
         <FAQ />
         <PricingSection />
