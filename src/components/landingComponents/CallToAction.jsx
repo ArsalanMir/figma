@@ -1,5 +1,5 @@
 import React from 'react';
-import Aibackground from "../assets/Aiimage.jpg";
+import Aibackground from "../../assets/Aiimage.jpg";
 
 const CallToAction = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Check, X } from "lucide-react";
-import teachers from "../assets/techers.png";
+import teachers from "../../assets/techers.png";
 
 const PricingSection = () => {
   const [selectedRegion, setSelectedRegion] = useState("Global");

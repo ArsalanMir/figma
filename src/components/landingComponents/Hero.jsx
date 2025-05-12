@@ -1,8 +1,8 @@
 import React from "react";
-import mainImage from "../assets/img1.png";
+import mainImage from "../../assets/img1.png";
 import { ArrowRight, Check } from "lucide-react";
-import curve1 from "../assets/curve1.svg";
-import curve2 from "../assets/curve2.svg";
+import curve1 from "../../assets/curve1.svg";
+import curve2 from "../../assets/curve2.svg";
 
 
 const WorkspaceCard = ({ icon, title, description, features, type }) => {
@@ -289,6 +289,7 @@ const Hero = () => {
         </div>
 
         {/* Benefit Cards */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
             <div key={index} className="bg-white/90 shadow-md rounded-xl p-6 hover:shadow-lg transition duration-200">
@@ -299,6 +300,7 @@ const Hero = () => {
         </div>
 
         {/* CTA Button */}
+
         <div className="mt-16 flex justify-center">
           <button className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold px-8 py-4 text-lg">
             Get started for free →

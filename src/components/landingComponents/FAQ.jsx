@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Standing from "../assets/teacher.jpg";
+import Standing from "../../assets/teacher.jpg";
 
 function FAQ() {
   const [activeId, setActiveId] = useState(null);
