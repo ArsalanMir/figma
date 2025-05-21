@@ -3,6 +3,12 @@ import mainImage from "../../assets/img1.png";
 import { ArrowRight, Check } from "lucide-react";
 import curve1 from "../../assets/curve1.svg";
 import curve2 from "../../assets/curve2.svg";
+import plan from "../../assets/plan.png";
+import design from "../../assets/design.png";
+import create from "../../assets/create.png";
+import manage from "../../assets/manage.png";
+import grow from "../../assets/grow.png";
+import earn from "../../assets/earn.png";
 
 const WorkspaceCard = ({ icon, title, description, features, type }) => {
   const getIconColor = () => {
@@ -55,21 +61,24 @@ const WorkspaceCard = ({ icon, title, description, features, type }) => {
 const Hero = () => {
   const workspaces = [
     {
-      icon: "🌱",
-      title: "Grow",
+      icon: "📝",
+      image: plan,
+      title: "Plan",
       description: "Everything you need to plan smarter",
       features: ["Curriculum Mapper", "Calendar Planner"],
-      type: "grow",
+      type: "plan",
     },
     {
-      icon: "🎨",
+      icon: "🎯",
+      image: design,
       title: "Design",
       description: "Tools to help you design engaging learning",
       features: ["Lesson Planner", "Quiz Builder"],
       type: "design",
     },
     {
-      icon: "✏️",
+      icon: "🎨",
+      image: create,
       title: "Create",
       description: "Turn ideas into educational resources",
       features: ["Worksheet Generator", "Slideshow Builder"],
@@ -77,26 +86,30 @@ const Hero = () => {
     },
     {
       icon: "📊",
+      image: manage,
       title: "Manage",
       description: "Organize your class and gain insights",
       features: ["Completion Analytics", "Report Card Generator"],
       type: "manage",
     },
     {
-      icon: "🔄",
-      title: "Reflect",
-      description: "Track personal progress and grow professionally",
+      icon: "🌱",
+      image: grow,
+      title: "Grow",
+      description: "Upskill with personal + professional growth",
       features: ["Self Assessment", "Certifications"],
-      type: "reflect",
+      type: "grow",
     },
     {
       icon: "💰",
+      image: earn,
       title: "Earn",
       description: "Share, scale, and monetize your expertise",
       features: ["Create your AI Co-teacher", "Teach at Scale"],
       type: "earn",
     },
   ];
+
   const benefits = [
     {
       icon: "⏱️",
@@ -237,7 +250,7 @@ const Hero = () => {
               </p>
 
               {/* Top Icons Row - single line scrollable */}
-              <div className="flex overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent whitespace-nowrap justify-center gap-4 px-2 mb-4">
+              <div className="flex overflow-x-auto no-scrollbar whitespace-nowrap justify-center gap-4 px-2 mb-4">
                 {[
                   { icon: "🌐", label: "Global Platform" },
                   { icon: "💬", label: "Localized Content for Every Region" },
@@ -256,7 +269,7 @@ const Hero = () => {
               </div>
 
               {/* Bottom Features Row - single line scrollable */}
-              <div className="flex overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent whitespace-nowrap justify-center gap-6 px-2 text-xs sm:text-sm md:text-sm">
+              <div className="flex overflow-x-auto no-scrollbar whitespace-nowrap justify-center gap-6 px-2 text-xs sm:text-sm md:text-sm">
                 {[
                   "Works in your language",
                   "Save hours every week",
@@ -276,13 +289,24 @@ const Hero = () => {
               </div>
             </div>
           </div>
+
+          <style jsx>{`
+            /* Hide scrollbar but keep scroll */
+            .no-scrollbar {
+              -ms-overflow-style: none; /* IE and Edge */
+              scrollbar-width: none; /* Firefox */
+            }
+            .no-scrollbar::-webkit-scrollbar {
+              display: none; /* Chrome, Safari, Opera */
+            }
+          `}</style>
         </div>
       </section>
 
       {/* Workspace Section */}
       <section className="relative bg-[#71D9E2] py-16 overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 relative z-10 pt-10">
-          <h2 className="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+          <h2 className="text-3xl md:text-5xl font-semibold text-center text-black mb-12">
             Your AI-Powered Teaching Workspaces
           </h2>
 
@@ -291,21 +315,54 @@ const Hero = () => {
             {workspaces.map((workspace, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-md p-4 flex flex-col items-start justify-between hover:shadow-lg transform transition-transform hover:scale-105 duration-300"
+                className="bg-white  overflow-hidden flex flex-col justify-between hover:shadow-lg transition-transform hover:scale-[1.02] duration-300"
               >
                 <img
                   src={workspace.image}
                   alt={workspace.title}
-                  className="w-full h-40 object-cover rounded-xl mb-4"
+                  className="w-full h-40 object-cover "
                 />
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                  {workspace.title}
-                </h3>
-                <p className="text-sm text-gray-600">{workspace.description}</p>
+
+                <div className="p-5 flex flex-col h-full">
+                  <div className="flex items-center gap-2 mb-2 text-emerald-600 font-semibold text-sm">
+                    <span className="text-lg">{workspace.icon}</span>
+                    <span className="text-black font-semibold text-lg">
+                      {workspace.title}
+                    </span>
+                  </div>
+
+                  <p className="text-gray-700 text-sm mb-3">
+                    {workspace.description}
+                  </p>
+
+                  <ul className="text-sm text-gray-600 mb-4 list-disc list-inside space-y-1">
+                    {workspace.features.map((feature, i) => (
+                      <li key={i}>{feature}</li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto text-right">
+                    <a
+                      href={workspace.exploreLink}
+                      className="text-emerald-600 font-semibold text-sm"
+                    >
+                      Explore {workspace.title} →
+                    </a>
+                    <div>
+                      <a
+                        href={workspace.seeFeaturesLink}
+                        className="text-sm text-gray-500 mt-1 inline-block"
+                      >
+                        See features →
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
 
+          {/* Button */}
           <div className="mt-12 flex justify-center">
             <button
               type="button"
